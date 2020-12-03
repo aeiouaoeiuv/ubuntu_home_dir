@@ -26,8 +26,22 @@ SetupDepends()
 SetupFonts()
 {
     PrintInfo "-- Setup fonts"
-    \cp -rf .local "$HOME"
-    fc-cache -f ~/.local/share/fonts
+
+    if [ ! -d "$HOME/.local/share/fonts" ]; then
+        mkdir -p "$HOME/.local/share/fonts"
+    fi
+
+    local reset_cache=false;
+    for f in .local/share/fonts/*; do
+        if [ ! -f "$HOME/$f" ]; then
+            \cp -f "$f" "$HOME/$f"
+            reset_cache=true;
+        fi
+    done
+
+    if ${reset_cache}; then
+        fc-cache -f ~/.local/share/fonts
+    fi
 }
 
 SetupVim()
