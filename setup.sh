@@ -133,8 +133,9 @@ SetupBash()
 SetupDisableUpdateNotifier()
 {
     PrintInfo "-- Setup disable update notifier"
-    if [ -f /etc/apt/apt.conf.d/99update-notifier ]; then
-        sudo rm -f /etc/apt/apt.conf.d/99update-notifier
+    if [ ! -L /usr/bin/update-manager ]; then
+        sudo mv /usr/bin/update-manager /usr/bin/update-manager_bak
+        sudo ln -sf /bin/true /usr/bin/update-manager
     fi
 }
 
@@ -145,7 +146,7 @@ SetupGit
 SetupBash
 SetupZsh
 SetupMisc
-SetupDisableUpdateNotifier
+# SetupDisableUpdateNotifier
 
 PrintSuccess "-- Setup complete"
 
