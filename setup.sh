@@ -20,11 +20,11 @@ PrintNotice()
 SetupDepends()
 {
     PrintInfo "-- Setup depends"
-    local packages="fontconfig zsh xclip vim git"
+    local packages="fontconfig zsh xclip vim git libevent-dev" # libevent-dev for tmux
 
     local arr=($packages)
     for p in ${arr[@]}; do
-        if dpkg-query -W -f'${Status}' "$p" >/dev/null 2>&1; then
+        if dpkg -s "$p" >/dev/null 2>&1; then
             continue # package already installed
         fi
 
