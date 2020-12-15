@@ -68,6 +68,7 @@ setopt hist_reduce_blanks        # Remove superfluous blanks before recording en
 setopt hist_verify               # Don't execute immediately upon history expansion.
 setopt hist_ignore_all_dups
 
+# colors' configuration
 if [ -e $HOME/.ls_colors ]; then
     eval $( dircolors -b $HOME/.ls_colors )
 fi
@@ -77,8 +78,21 @@ alias j="jump"
 setopt rmstarsilent
 setopt no_nomatch
 
+# user's private bin
 newpath="$HOME/.local/bin"
 if [[ "${PATH}" != *"${newpath}"* ]]; then
     export PATH=$PATH:$newpath
+fi
+
+# nvm configuration
+export NVM_DIR="$HOME/.nvm"
+if [ -e $NVM_DIR ]; then
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+# opam configuration
+if [ -e $HOME/.opam ]; then
+    test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
 
