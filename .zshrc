@@ -81,7 +81,7 @@ setopt no_nomatch
 # user's private bin
 newpath="$HOME/.local/bin"
 if [[ "${PATH}" != *"${newpath}"* ]]; then
-    export PATH=$PATH:$newpath
+    export PATH=$newpath:$PATH
 fi
 
 # nvm configuration
