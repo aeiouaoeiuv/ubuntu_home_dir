@@ -76,7 +76,7 @@ SetupGit()
     git config --global core.editor /usr/bin/vim
     git config --global alias.st status
     git config --global alias.co checkout
-    git config --global alias.lg "log --all --graph --pretty=format:\"%C(154)%h %C(31)%ai %C(6)%an%Creset%C(auto)%d%Creset%n%w(0,4,4)%B\""
+    git config --global alias.lg "log --all --graph --pretty=format:\"%C(154 60) %h %Creset%C(white 31) %ai %Creset%C(17 178) %an %Creset%C(178)%Creset%C(auto)%d%Creset%n%w(0,4,4)%B\""
     git config --global log.date iso
     git config --global diff.tool vimdiff
     git config --global difftool.prompt true
