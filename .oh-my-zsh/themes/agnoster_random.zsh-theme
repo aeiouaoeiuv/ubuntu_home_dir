@@ -126,7 +126,7 @@ prompt_status() {
 	local -a txt
 	() {
 		local LC_ALL="" LC_CTYPE="en_US.UTF-8"
-		JOBS_CHAR=$'\u2699' # ⚙
+		JOBS_CHAR=$'\uE793' # 
 	}
 
 	[[ ${RETVAL} -ne 0 ]] && txt+=${RETVAL}
