@@ -60,7 +60,9 @@ syntax on " highlight syntax
 set ffs=unix " CR dispaly as ^M
 colorscheme one " color scheme
 set background=dark
-hi Normal guibg=NONE ctermbg=NONE " background transparent
+
+hi Normal guibg=NONE ctermbg=NONE              " background transparent
+hi Visual guifg=#fafafa guibg=#f57f17 gui=NONE " selection color
 
 " inherit indent style
 " execute 'set paste' on pasting, and execute 'set nopaste' after pasting
