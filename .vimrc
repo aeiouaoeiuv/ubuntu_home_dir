@@ -15,6 +15,8 @@ Plugin 'tablify'
 Plugin 'luochen1990/rainbow'
 Plugin 'rakr/vim-one'
 Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 filetype plugin indent on " required
@@ -60,6 +62,7 @@ syntax on " highlight syntax
 set ffs=unix " CR dispaly as ^M
 colorscheme one " color scheme
 set background=dark
+set encoding=UTF-8
 
 hi Normal guibg=NONE ctermbg=NONE              " background transparent
 hi Visual guifg=#fafafa guibg=#f57f17 gui=NONE " selection color
