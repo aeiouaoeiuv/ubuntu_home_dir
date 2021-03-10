@@ -80,6 +80,7 @@ SetupGit()
     git config --global log.date iso
     git config --global diff.tool vimdiff
     git config --global difftool.prompt true
+    git config --global core.pager "less -x1,5"
 }
 
 SetupMisc()
