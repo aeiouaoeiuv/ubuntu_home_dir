@@ -63,6 +63,7 @@ set ffs=unix " CR dispaly as ^M
 colorscheme one " color scheme
 set background=dark
 set encoding=UTF-8
+set nostartofline " keep cursor position when buffer switched
 
 hi Normal guibg=NONE ctermbg=NONE              " background transparent
 hi Visual guifg=#fafafa guibg=#f57f17 gui=NONE " selection color
